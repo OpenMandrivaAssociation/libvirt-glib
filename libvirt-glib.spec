@@ -18,7 +18,8 @@
 %define girname_gconfig		%mklibname %{oname}-gconfig-gir %{girmajor}
 %define girname_gobject		%mklibname %{oname}-gobject-gir %{girmajor}
 
-%define _exclude_files_from_autoreq ^%{_datadir}/doc/libvirt-glib-python/event-test.py$
+#we really need this?
+#% define _exclude_files_from_autoreq ^%{_datadir}/doc/libvirt-glib-python/event-test.py$
 
 Name:		libvirt-glib
 Version:	0.1.5
