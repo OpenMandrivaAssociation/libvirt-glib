@@ -34,6 +34,7 @@ BuildRequires:	pkgconfig(libvirt) >= 0.9.10
 BuildRequires:	python-devel
 BuildRequires:	gobject-introspection-devel
 BuildRequires:	libxml2-devel
+BuildRequires:	python-pkg-resources
 # Hack due to https://bugzilla.redhat.com/show_bug.cgi?id=613466
 BuildRequires:	libtool
 BuildRequires:	vala
@@ -227,8 +228,8 @@ libvirt and the glib event loop
 
 
 %build
-%configure2_5x --enable-introspection --with-python --disable-static
-%make
+%configure2_5x --enable-introspection --with-python --disable-static --enable-vala
+%make LIBS="-lpython2.7"
 
 
 %install
