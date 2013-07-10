@@ -22,7 +22,7 @@
 #% define _exclude_files_from_autoreq ^%{_datadir}/doc/libvirt-glib-python/event-test.py$
 
 Name:		libvirt-glib
-Version:	0.1.5
+Version:	0.1.7
 Release:	1
 Summary:	libvirt glib integration for events
 Group:		System/Libraries
