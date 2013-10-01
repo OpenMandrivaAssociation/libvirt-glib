@@ -23,7 +23,7 @@
 
 Name:		libvirt-glib
 Version:	0.1.7
-Release:	1
+Release:	2
 Summary:	libvirt glib integration for events
 Group:		System/Libraries
 License:	LGPLv2+
@@ -51,6 +51,7 @@ event loop.
 %package -n %{libname_glib}
 Group:		System/Libraries
 Summary:	libvirt object APIs for processing object configuration
+Provides:	%{name} = %{version}-%{release}
 Provides:	%{mklibname %{oname}-glib %{major}} = %{version}-%{release}
 
 %description -n %{libname_glib}
