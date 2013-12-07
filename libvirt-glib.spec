@@ -23,7 +23,7 @@
 
 Name:		libvirt-glib
 Version:	0.1.7
-Release:	3
+Release:	4
 Summary:	libvirt glib integration for events
 Group:		System/Libraries
 License:	LGPLv2+
