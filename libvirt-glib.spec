@@ -22,8 +22,8 @@
 #% define _exclude_files_from_autoreq ^%{_datadir}/doc/libvirt-glib-python/event-test.py$
 
 Name:		libvirt-glib
-Version:	0.1.7
-Release:	9
+Version:	0.1.9
+Release:	1
 Summary:	libvirt glib integration for events
 Group:		System/Libraries
 License:	LGPLv2+
@@ -58,7 +58,7 @@ Provides:	%{mklibname %{oname}-glib %{major}} = %{version}-%{release}
 This package provides APIs for processing the object configuration
 data
 
-%files -n %{libname_glib}
+%files -n %{libname_glib} -f %name.lang
 %doc README COPYING AUTHORS ChangeLog NEWS
 %{_libdir}/libvirt-glib-%{api}.so.%{major}*
 
@@ -209,31 +209,18 @@ GObject Introspection interface description for %{name}.
 # ---------------------------------------------------------------------------
 
 
-%package python
-Group:		System/Libraries
-Summary:	libvirt glib integration for events python binding
-
-%description python
-This package provides a python module for integration between
-libvirt and the glib event loop
-
-%files python
-%doc examples/event-test.py
-%{py_platsitedir}/*
-
-# ---------------------------------------------------------------------------
-
-
 %prep
 %setup -q
 
 
 %build
-%configure2_5x --enable-introspection --with-python --disable-static --enable-vala
-%make LIBS="-lpython2.7"
+%configure --enable-introspection --enable-vala
+%make
 
 
 %install
 %makeinstall_std
 # Fix up libtool libraries.
 find %{buildroot} -name '*.la' | xargs rm
+
+%find_lang %{name}
