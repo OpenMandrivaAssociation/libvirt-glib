@@ -21,6 +21,8 @@
 #we really need this?
 #% define _exclude_files_from_autoreq ^%{_datadir}/doc/libvirt-glib-python/event-test.py$
 
+%define _disable_rebuild_configure 1
+
 Name:		libvirt-glib
 Version:	0.2.2
 Release:	1
