@@ -1,6 +1,2 @@
-removed_sources:
-  libvirt-glib-0.1.7.tar.gz: 0a25e1aab491d78399c01eff1391c1121e906399
-  libvirt-glib-0.1.9.tar.gz: ad54f51bf2afd5c7a23b7ee81a43dc7e61eadce2
-  libvirt-glib-0.2.0.tar.gz: 676f32c625be8e3f75ea87cee2c67f923c122739
 sources:
-  libvirt-glib-0.2.2.tar.gz: 0ba564ea1b7cf55dc898887c84bbbf7ddeb23942
+  libvirt-glib-0.2.3.tar.gz: 540e61f87354dbc4e19b2b53dc581d143afb03ed
