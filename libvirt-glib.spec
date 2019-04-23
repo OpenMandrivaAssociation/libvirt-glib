@@ -25,7 +25,7 @@
 
 Name:		libvirt-glib
 Version:	2.0.0
-Release:	1
+Release:	2
 Summary:	libvirt glib integration for events
 Group:		System/Libraries
 License:	LGPLv2+
