@@ -24,8 +24,8 @@
 %define _disable_rebuild_configure 1
 
 Name:		libvirt-glib
-Version:	2.0.0
-Release:	2
+Version:	3.0.0
+Release:	1
 Summary:	libvirt glib integration for events
 Group:		System/Libraries
 License:	LGPLv2+
@@ -217,11 +217,11 @@ GObject Introspection interface description for %{name}.
 
 %build
 %configure --enable-introspection --enable-vala
-%make
+%make_build
 
 
 %install
-%makeinstall_std
+%make_install
 # Fix up libtool libraries.
 find %{buildroot} -name '*.la' | xargs rm
 
