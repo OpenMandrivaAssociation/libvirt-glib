@@ -24,7 +24,7 @@
 %define _disable_rebuild_configure 1
 
 Name:		libvirt-glib
-Version:	3.0.0
+Version:	4.0.0
 Release:	1
 Summary:	libvirt glib integration for events
 Group:		System/Libraries
