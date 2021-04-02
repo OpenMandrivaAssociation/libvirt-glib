@@ -31,6 +31,7 @@ Group:		System/Libraries
 License:	LGPLv2+
 URL:		http://libvirt.org/
 Source0:	http://libvirt.org/sources/glib/%{name}-%{version}.tar.gz
+BuildRequires:  meson
 BuildRequires:	pkgconfig(glib-2.0) >= 2.10.0
 BuildRequires:	pkgconfig(libvirt) >= 0.9.10
 BuildRequires:	python-devel
@@ -210,18 +211,19 @@ GObject Introspection interface description for %{name}.
 
 # ---------------------------------------------------------------------------
 
-
 %prep
 %setup -q
 
-
 %build
-%configure --enable-introspection --enable-vala
-%make_build
+%meson  \
+        -Dintrospection=true \
+        -Dvapi=true
+
+%meson_build
 
 
 %install
-%make_install
+%meson_install
 # Fix up libtool libraries.
 find %{buildroot} -name '*.la' | xargs rm
 
