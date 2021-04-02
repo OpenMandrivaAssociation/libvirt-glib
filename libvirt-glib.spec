@@ -216,8 +216,8 @@ GObject Introspection interface description for %{name}.
 
 %build
 %meson  \
-        -Dintrospection=true \
-        -Dvapi=true
+        -Dintrospection=enabled \
+        -Dvapi=enabled
 
 %meson_build
 
