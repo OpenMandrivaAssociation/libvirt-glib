@@ -34,6 +34,7 @@ Source0:	http://libvirt.org/sources/glib/%{name}-%{version}.tar.gz
 BuildRequires:  meson
 BuildRequires:	pkgconfig(glib-2.0) >= 2.10.0
 BuildRequires:	pkgconfig(libvirt) >= 0.9.10
+BuildRequires:  pkgconfig(gtk-doc)
 BuildRequires:	python-devel
 BuildRequires:	gobject-introspection-devel
 BuildRequires:	libxml2-devel
