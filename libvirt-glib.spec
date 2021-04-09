@@ -94,6 +94,7 @@ integration between libvirt and the glib event loop.
 %{_datadir}/gir-1.0/LibvirtGLib-%{girmajor}.gir
 %{_datadir}/gtk-doc/html/Libvirt-glib
 %{_datadir}/vala/vapi/libvirt-glib-%{api}.vapi
+%{_datadir}/vala/vapi/libvirt-glib-%{api}.deps
 
 
 %package -n %{girname_glib}
@@ -146,6 +147,7 @@ the object configuration APIs.
 %{_datadir}/gir-1.0/LibvirtGConfig-%{girmajor}.gir
 %{_datadir}/gtk-doc/html/Libvirt-gconfig
 %{_datadir}/vala/vapi/libvirt-gconfig-%{api}.vapi
+%{_datadir}/vala/vapi/libvirt-gconfig-%{api}.deps
 
 
 %package -n %{girname_gconfig}
