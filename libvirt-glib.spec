@@ -21,6 +21,8 @@
 #we really need this?
 #% define _exclude_files_from_autoreq ^%{_datadir}/doc/libvirt-glib-python/event-test.py$
 
+%global optflags %{optflags} -O
+
 %define _disable_rebuild_configure 1
 
 Name:		libvirt-glib
@@ -31,7 +33,9 @@ Group:		System/Libraries
 License:	LGPLv2+
 URL:		http://libvirt.org/
 Source0:	http://libvirt.org/sources/glib/%{name}-%{version}.tar.gz
+Patch1:         %{name}-%{version}-cast-align.patch
 BuildRequires:  meson
+BuildRequires:  gettext
 BuildRequires:	pkgconfig(glib-2.0) >= 2.10.0
 BuildRequires:	pkgconfig(libvirt) >= 0.9.10
 BuildRequires:  pkgconfig(gtk-doc)
@@ -64,7 +68,7 @@ This package provides APIs for processing the object configuration
 data
 
 %files -n %{libname_glib} -f %name.lang
-%doc README COPYING AUTHORS ChangeLog NEWS
+%doc README COPYING AUTHORS NEWS
 %{_libdir}/libvirt-glib-%{api}.so.%{major}*
 
 
@@ -90,6 +94,7 @@ integration between libvirt and the glib event loop.
 %{_datadir}/gir-1.0/LibvirtGLib-%{girmajor}.gir
 %{_datadir}/gtk-doc/html/Libvirt-glib
 %{_datadir}/vala/vapi/libvirt-glib-%{api}.vapi
+%{_datadir}/vala/vapi/libvirt-glib-%{api}.deps
 
 
 %package -n %{girname_glib}
@@ -142,6 +147,7 @@ the object configuration APIs.
 %{_datadir}/gir-1.0/LibvirtGConfig-%{girmajor}.gir
 %{_datadir}/gtk-doc/html/Libvirt-gconfig
 %{_datadir}/vala/vapi/libvirt-gconfig-%{api}.vapi
+%{_datadir}/vala/vapi/libvirt-gconfig-%{api}.deps
 
 
 %package -n %{girname_gconfig}
@@ -214,19 +220,18 @@ GObject Introspection interface description for %{name}.
 # ---------------------------------------------------------------------------
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %meson  \
         -Dintrospection=enabled \
-        -Dvapi=enabled
+        -Dvapi=enabled \
+        -Dgit_werror=disabled
 
 %meson_build
 
 
 %install
 %meson_install
-# Fix up libtool libraries.
-find %{buildroot} -name '*.la' | xargs rm
 
 %find_lang %{name}
