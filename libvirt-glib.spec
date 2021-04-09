@@ -39,6 +39,7 @@ BuildRequires:	python-devel
 BuildRequires:	gobject-introspection-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	python-pkg-resources
+BuildRequires:  python3dist(python-distutils-extra)
 # Hack due to https://bugzilla.redhat.com/show_bug.cgi?id=613466
 BuildRequires:	libtool
 BuildRequires:	vala
