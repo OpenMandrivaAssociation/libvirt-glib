@@ -232,6 +232,6 @@ GObject Introspection interface description for %{name}.
 %install
 %meson_install
 # Fix up libtool libraries.
-find %{buildroot} -name '*.la' | xargs rm
+#find %{buildroot} -name '*.la' | xargs rm
 
 %find_lang %{name}
