@@ -31,7 +31,9 @@ Group:		System/Libraries
 License:	LGPLv2+
 URL:		http://libvirt.org/
 Source0:	http://libvirt.org/sources/glib/%{name}-%{version}.tar.gz
+Patch1:         %{name}-%{version}-cast-align.patch
 BuildRequires:  meson
+BuildRequires:  gettext
 BuildRequires:	pkgconfig(glib-2.0) >= 2.10.0
 BuildRequires:	pkgconfig(libvirt) >= 0.9.10
 BuildRequires:  pkgconfig(gtk-doc)
@@ -214,7 +216,7 @@ GObject Introspection interface description for %{name}.
 # ---------------------------------------------------------------------------
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %meson  \
