@@ -68,7 +68,7 @@ This package provides APIs for processing the object configuration
 data
 
 %files -n %{libname_glib} -f %name.lang
-%doc README COPYING AUTHORS ChangeLog NEWS
+%doc README COPYING AUTHORS NEWS
 %{_libdir}/libvirt-glib-%{api}.so.%{major}*
 
 
@@ -231,7 +231,5 @@ GObject Introspection interface description for %{name}.
 
 %install
 %meson_install
-# Fix up libtool libraries.
-#find %{buildroot} -name '*.la' | xargs rm
 
 %find_lang %{name}
