@@ -26,13 +26,13 @@
 %define _disable_rebuild_configure 1
 
 Name:		libvirt-glib
-Version:	4.0.0
-Release:	2
+Version:	5.0.0
+Release:	1
 Summary:	libvirt glib integration for events
 Group:		System/Libraries
 License:	LGPLv2+
 URL:		http://libvirt.org/
-Source0:	http://libvirt.org/sources/glib/%{name}-%{version}.tar.gz
+Source0:	http://libvirt.org/sources/glib/%{name}-%{version}.tar.xz
 Patch1:         %{name}-%{version}-cast-align.patch
 BuildRequires:  meson
 BuildRequires:  gettext
