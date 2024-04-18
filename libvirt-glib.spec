@@ -33,7 +33,7 @@ Group:		System/Libraries
 License:	LGPLv2+
 URL:		http://libvirt.org/
 Source0:	http://libvirt.org/sources/glib/%{name}-%{version}.tar.xz
-Patch1:         %{name}-%{version}-cast-align.patch
+Patch1:         %{name}-4.0.0-cast-align.patch
 BuildRequires:  meson
 BuildRequires:  gettext
 BuildRequires:	pkgconfig(glib-2.0) >= 2.10.0
