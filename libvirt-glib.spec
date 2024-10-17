@@ -31,7 +31,7 @@ Release:	1
 Summary:	libvirt glib integration for events
 Group:		System/Libraries
 License:	LGPLv2+
-URL:		http://libvirt.org/
+URL:		https://libvirt.org/
 Source0:	http://libvirt.org/sources/glib/%{name}-%{version}.tar.xz
 #Patch1:         %{name}-4.0.0-cast-align.patch
 BuildRequires:  meson
