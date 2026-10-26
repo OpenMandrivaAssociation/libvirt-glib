@@ -35,6 +35,7 @@ URL:		https://libvirt.org/
 Source0:	http://libvirt.org/sources/glib/%{name}-%{version}.tar.xz
 #Patch1:         %{name}-4.0.0-cast-align.patch
 BuildRequires:  meson
+BuildRequires:  make
 BuildRequires:  gettext
 BuildRequires:	pkgconfig(glib-2.0) >= 2.10.0
 BuildRequires:	pkgconfig(libvirt) >= 0.9.10
